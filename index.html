@@ -39,8 +39,11 @@
 
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 
-  /* 统一模块间距 */
   --section-pad: 96px;
+
+  /* 统一「System Types」标题样式 —— 全站小标题基准 */
+  --label-size: 15.5px;
+  --label-weight: 680;
 }
 
 html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
@@ -102,7 +105,6 @@ img, svg { display: block; max-width: 100%; }
   gap: 20px;
 }
 
-/* Logo —— 单一模块，替换 src 即可 */
 .logo {
   display: flex;
   align-items: center;
@@ -128,7 +130,6 @@ img, svg { display: block; max-width: 100%; }
 
 .nav-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 
-/* 语言切换 */
 .lang-switch {
   position: relative;
   display: flex;
@@ -227,7 +228,6 @@ section.surface {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
-/* 让有背景色的相邻模块不重复边框 */
 section.surface + section.surface { border-top: none; }
 
 .section-head { max-width: 720px; margin-bottom: 48px; }
@@ -329,7 +329,7 @@ h1 em { font-style: normal; color: var(--red); }
 }
 .hero-points .pt span { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
 
-/* ============ 镜头推进演示模块（可整体替换为 GIF / MP4） ============ */
+/* ============ 镜头推进演示模块 ============ */
 .hero-visual { position: relative; }
 
 .stage {
@@ -345,15 +345,6 @@ h1 em { font-style: normal; color: var(--red); }
   isolation: isolate;
 }
 
-/*
-  ============================================================
-  【可替换模块】stage-demo
-  当前为 CSS 动画演示。替换为真实 GIF / 视频时：
-  ① 删除 <div class="stage-demo">...</div>
-  ② 取消注释下面的 <img class="stage-media" ...> 或 <video ...>
-  两种方式共用同一容器尺寸，HUD 保持不变。
-  ============================================================
-*/
 .stage-demo { position: absolute; inset: 0; }
 
 .stage-media {
@@ -365,7 +356,6 @@ h1 em { font-style: normal; color: var(--red); }
   display: block;
 }
 
-/* 场景整体，随镜头推进放大 */
 .scene {
   position: absolute;
   inset: 0;
@@ -378,13 +368,11 @@ h1 em { font-style: normal; color: var(--red); }
   100%      { transform: scale(1); }
 }
 
-/* 天空 */
 .sky {
   position: absolute; inset: 0;
   background: linear-gradient(180deg, #D6E3EF 0%, #E6EEF5 42%, #F3F7FA 72%, #FAFCFD 100%);
 }
 
-/* 太阳光晕 */
 .haze {
   position: absolute;
   left: 12%; top: 4%;
@@ -393,7 +381,6 @@ h1 em { font-style: normal; color: var(--red); }
   filter: blur(14px);
 }
 
-/* 远山 */
 .mtn {
   position: absolute;
   bottom: 0;
@@ -420,7 +407,6 @@ h1 em { font-style: normal; color: var(--red); }
   opacity: .5;
 }
 
-/* 悬崖平台 */
 .cliff {
   position: absolute;
   left: 26%; bottom: 6%;
@@ -429,7 +415,6 @@ h1 em { font-style: normal; color: var(--red); }
   clip-path: polygon(0% 100%, 0% 34%, 46% 8%, 100% 26%, 100% 100%);
 }
 
-/* 别墅 */
 .villa {
   position: absolute;
   left: 40%;
@@ -438,7 +423,6 @@ h1 em { font-style: normal; color: var(--red); }
   height: 34%;
 }
 
-/* 悬挑平台 */
 .villa-deck {
   position: absolute;
   left: 0; bottom: 14%;
@@ -448,7 +432,6 @@ h1 em { font-style: normal; color: var(--red); }
   box-shadow: 0 4px 12px rgba(20,30,45,.16);
 }
 
-/* 主体 */
 .villa-body {
   position: absolute;
   left: 4%; bottom: 19%;
@@ -459,7 +442,6 @@ h1 em { font-style: normal; color: var(--red); }
   box-shadow: 0 10px 28px rgba(20,30,45,.22);
 }
 
-/* 实墙部分 */
 .wall {
   width: 15%;
   height: 100%;
@@ -477,7 +459,6 @@ h1 em { font-style: normal; color: var(--red); }
   background: linear-gradient(180deg, #DCE3EA, #C9D2DB);
 }
 
-/* 玻璃幕墙 */
 .glass {
   flex: 1;
   height: 100%;
@@ -486,10 +467,8 @@ h1 em { font-style: normal; color: var(--red); }
   overflow: hidden;
 }
 
-/* 玻璃内的精致家居 */
 .interior { position: absolute; inset: 0; }
 
-/* 木地板 */
 .floor {
   position: absolute;
   left: 0; right: 0; bottom: 0;
@@ -502,7 +481,6 @@ h1 em { font-style: normal; color: var(--red); }
   background: repeating-linear-gradient(90deg, rgba(0,0,0,.06) 0 1px, transparent 1px 12%);
 }
 
-/* 落地灯 */
 .lamp {
   position: absolute;
   left: 12%; bottom: 26%;
@@ -529,7 +507,6 @@ h1 em { font-style: normal; color: var(--red); }
   filter: blur(5px);
 }
 
-/* 沙发 */
 .sofa {
   position: absolute;
   left: 24%; bottom: 26%;
@@ -547,7 +524,6 @@ h1 em { font-style: normal; color: var(--red); }
   background: linear-gradient(180deg, #F3EBDE, #E2D5C1);
 }
 
-/* 茶几 */
 .table {
   position: absolute;
   left: 60%; bottom: 27%;
@@ -564,7 +540,6 @@ h1 em { font-style: normal; color: var(--red); }
   background: #32261B;
 }
 
-/* 植物 */
 .plant {
   position: absolute;
   right: 9%; bottom: 26%;
@@ -582,7 +557,6 @@ h1 em { font-style: normal; color: var(--red); }
   background: #6B5B47;
 }
 
-/* 挂画 */
 .art {
   position: absolute;
   left: 42%; top: 12%;
@@ -591,7 +565,6 @@ h1 em { font-style: normal; color: var(--red); }
   background: linear-gradient(140deg, #D9A24A, #B4723A 60%, #8C5430);
 }
 
-/* 玻璃反射光条 */
 .glass::after {
   content: '';
   position: absolute;
@@ -602,7 +575,6 @@ h1 em { font-style: normal; color: var(--red); }
   pointer-events: none;
 }
 
-/* 屋顶 */
 .villa-roof {
   position: absolute;
   left: 0; bottom: 85%;
@@ -612,7 +584,6 @@ h1 em { font-style: normal; color: var(--red); }
   box-shadow: 0 -2px 10px rgba(20,30,45,.12);
 }
 
-/* 支撑细柱 */
 .pillar {
   position: absolute;
   bottom: 0;
@@ -625,7 +596,6 @@ h1 em { font-style: normal; color: var(--red); }
 .pillar.p2 { left: 48%; }
 .pillar.p3 { left: 84%; }
 
-/* 磨砂层（覆盖玻璃幕墙，随镜头推进消退） */
 .frost {
   position: absolute;
   left: calc(40% + 54% * 0.04 + 54% * 0.92 * 0.15);
@@ -654,7 +624,6 @@ h1 em { font-style: normal; color: var(--red); }
   opacity: .8;
 }
 
-/* 大气雾气 */
 .atmos {
   position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(255,255,255,.34) 0%, rgba(255,255,255,.14) 45%, rgba(255,255,255,0) 100%);
@@ -667,7 +636,6 @@ h1 em { font-style: normal; color: var(--red); }
   100%      { opacity: 1; }
 }
 
-/* HUD 数据层 */
 .hud {
   position: absolute;
   left: 18px; bottom: 18px;
@@ -786,7 +754,14 @@ h1 em { font-style: normal; color: var(--red); }
   background: var(--red-soft);
   color: var(--red);
 }
-.card h3 { font-size: 15.5px; font-weight: 680; margin-bottom: 8px; letter-spacing: -0.2px; }
+/* 与 SYSTEM TYPES 统一的小标题样式 */
+.card h3 {
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  margin-bottom: 8px;
+  letter-spacing: -0.2px;
+  color: var(--ink);
+}
 .card p { font-size: 13.5px; color: var(--muted); line-height: 1.7; }
 
 /* ============ 技术 ============ */
@@ -801,18 +776,21 @@ h1 em { font-style: normal; color: var(--red); }
   padding: 18px 0;
   border-bottom: 1px solid var(--line);
   display: grid;
-  grid-template-columns: 128px 1fr;
+  grid-template-columns: 1.1fr 1.6fr;
   gap: 20px;
   align-items: baseline;
 }
 .tech-item:first-child { border-top: 1px solid var(--line); }
+
+/* ① 表头字号加大 —— 与 System Types 统一 */
 .tech-item dt {
   font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .8px;
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: .2px;
   text-transform: uppercase;
   color: var(--red);
+  line-height: 1.4;
 }
 .tech-item dd { font-size: 14px; color: var(--ink-2); line-height: 1.7; }
 
@@ -853,41 +831,111 @@ h1 em { font-style: normal; color: var(--red); }
 }
 .specs-row {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1.1fr 1.9fr;
   border-bottom: 1px solid var(--line);
   transition: background .2s ease;
 }
 .specs-row:last-child { border-bottom: none; }
 .specs-row:hover { background: var(--bg-alt); }
+
+/* ② 规格表头字号加大 —— 与 System Types 统一 */
 .specs-row .k {
-  padding: 16px 24px;
+  padding: 17px 24px;
   font-family: var(--mono);
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: .6px;
-  color: var(--muted);
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: .2px;
+  color: var(--red);
   border-right: 1px solid var(--line);
   text-transform: uppercase;
+  line-height: 1.4;
 }
-.specs-row .v { padding: 16px 24px; font-size: 14px; color: var(--ink); }
+.specs-row .v {
+  padding: 17px 24px;
+  font-size: 14px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+}
 
-.dl-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
-.dl-btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 10px 18px;
-  border-radius: 10px;
-  font-size: 13px;
-  font-weight: 550;
-  color: var(--muted);
+/* ③ 下载模块 —— 更显眼 + 可替换链接 */
+.dl-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 28px;
+}
+.dl-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 12px;
   border: 1px solid var(--line-2);
-  background: #fff;
-  transition: all .2s ease;
+  background: linear-gradient(160deg, #FFFFFF, var(--bg-alt));
+  transition: all .25s cubic-bezier(.4,0,.2,1);
+  position: relative;
+  overflow: hidden;
 }
-.dl-btn:hover { color: var(--red); border-color: var(--red-line); background: var(--red-soft); }
+.dl-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--red);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform .3s cubic-bezier(.4,0,.2,1);
+}
+.dl-card:hover::before { transform: scaleY(1); }
+.dl-card:hover {
+  border-color: var(--red-line);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  background: #fff;
+}
+.dl-icon {
+  width: 42px; height: 42px;
+  border-radius: 11px;
+  display: grid; place-items: center;
+  background: var(--red-soft);
+  color: var(--red);
+  flex-shrink: 0;
+  transition: all .25s ease;
+}
+.dl-card:hover .dl-icon {
+  background: var(--red);
+  color: #fff;
+}
+.dl-text { flex: 1; min-width: 0; }
+.dl-text strong {
+  display: block;
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  color: var(--ink);
+  letter-spacing: -0.1px;
+  margin-bottom: 2px;
+  line-height: 1.35;
+}
+.dl-text span {
+  font-size: 12.2px;
+  color: var(--muted);
+  font-family: var(--mono);
+  letter-spacing: .3px;
+}
+.dl-arrow {
+  flex-shrink: 0;
+  color: var(--muted-2);
+  transition: all .25s ease;
+}
+.dl-card:hover .dl-arrow {
+  color: var(--red);
+  transform: translateX(3px);
+}
 
-/* ============ 应用场景 ============ */
+/* ============ 应用场景（图片模块） ============ */
 .app-card {
-  padding: 24px 20px;
+  padding: 14px 14px 20px;
   border-radius: var(--radius);
   border: 1px solid var(--line);
   background: #fff;
@@ -898,23 +946,37 @@ h1 em { font-style: normal; color: var(--red); }
   border-color: var(--red-line);
   box-shadow: var(--shadow-md);
 }
-.app-card .ai {
-  width: 38px; height: 38px;
+
+.app-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
   border-radius: 10px;
-  display: grid; place-items: center;
-  margin-bottom: 14px;
+  overflow: hidden;
+  margin-bottom: 16px;
   background: var(--bg-alt);
-  color: var(--ink-2);
-  transition: all .28s ease;
+  position: relative;
 }
-.app-card:hover .ai { background: var(--red-soft); color: var(--red); }
-.app-card h4 { font-size: 14.5px; font-weight: 680; margin-bottom: 7px; }
+.app-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s cubic-bezier(.4,0,.2,1);
+}
+.app-card:hover .app-img img { transform: scale(1.05); }
+
+.app-card h4 {
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  margin-bottom: 7px;
+  color: var(--ink);
+}
 .app-card p { font-size: 13px; color: var(--muted); line-height: 1.65; }
 
-/* ============ 产品生态 ============ */
+/* ============ 产品生态（图片模块） ============ */
 .eco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .eco-item {
-  padding: 28px 24px;
+  padding: 16px 16px 26px;
   border-radius: var(--radius);
   border: 1px solid var(--line);
   background: #fff;
@@ -932,16 +994,42 @@ h1 em { font-style: normal; color: var(--red); }
 }
 .eco-item:hover::before { height: 100%; }
 .eco-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--line-2); }
+
+.eco-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  background: var(--bg-alt);
+  position: relative;
+}
+.eco-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s cubic-bezier(.4,0,.2,1);
+}
+.eco-item:hover .eco-img img { transform: scale(1.05); }
+
+/* ④ 产品生态数字 —— 品牌红色 + 加粗 */
 .eco-item .no {
   font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.4px;
-  color: var(--muted-3);
-  margin-bottom: 14px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  color: var(--red);
+  margin-bottom: 10px;
   display: block;
+  line-height: 1;
 }
-.eco-item h4 { font-size: 15.5px; font-weight: 680; margin-bottom: 8px; }
+.eco-item h4 {
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  margin-bottom: 8px;
+  color: var(--ink);
+}
 .eco-item p { font-size: 13.2px; color: var(--muted); line-height: 1.68; }
 
 /* ============ 客户评价（含图片） ============ */
@@ -957,7 +1045,6 @@ h1 em { font-style: normal; color: var(--red); }
 }
 .quote:hover { box-shadow: var(--shadow-md); border-color: var(--line-2); }
 
-/* 【可替换图片模块】—— 替换 src 即可 */
 .quote-media {
   width: 100%;
   aspect-ratio: 16 / 10;
@@ -973,7 +1060,14 @@ h1 em { font-style: normal; color: var(--red); }
   display: block;
 }
 
-.quote .stars { color: var(--red); font-size: 13px; letter-spacing: 2.5px; }
+/* ⑤ 五星加大、更显眼 */
+.quote .stars {
+  color: var(--red);
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: 4px;
+  text-shadow: 0 2px 6px rgba(200,16,46,.18);
+}
 .quote p { font-size: 14px; color: var(--ink-2); line-height: 1.78; }
 .quote .who {
   font-size: 12.5px;
@@ -1111,15 +1205,23 @@ footer {
   border-bottom: 1px solid var(--line);
 }
 .foot-brand .logo { margin-bottom: 16px; }
-.foot-brand p { font-size: 13.2px; color: var(--muted); line-height: 1.72; max-width: 300px; }
+.foot-brand p {
+  font-size: 13.2px;
+  color: var(--muted);
+  line-height: 1.72;
+  max-width: 320px;
+}
+
+/* ⑥ 页脚栏目标题 —— 与 System Types 统一 + 品牌红 */
 .foot-col h5 {
   font-family: var(--mono);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  letter-spacing: .2px;
   text-transform: uppercase;
-  color: var(--muted-3);
+  color: var(--red);
   margin-bottom: 16px;
+  line-height: 1.4;
 }
 .foot-col a, .foot-col span {
   display: block;
@@ -1164,6 +1266,7 @@ footer {
   .grid-4, .eco-grid { grid-template-columns: repeat(2, 1fr); }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .dl-row { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 900px) {
@@ -1198,12 +1301,13 @@ footer {
 }
 
 @media (max-width: 620px) {
+  :root { --label-size: 14.5px; }
   .grid-4, .eco-grid, .stats { grid-template-columns: 1fr; }
   .foot-grid { grid-template-columns: 1fr; gap: 28px; }
   .specs-row { grid-template-columns: 1fr; }
-  .specs-row .k { border-right: none; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
-  .specs-row .v { padding-top: 10px; }
-  .tech-item { grid-template-columns: 1fr; gap: 5px; }
+  .specs-row .k { border-right: none; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+  .specs-row .v { padding-top: 12px; }
+  .tech-item { grid-template-columns: 1fr; gap: 6px; }
   .hero-points { grid-template-columns: 1fr; }
   .stage { aspect-ratio: 4 / 3.4; }
   .hud { left: 12px; right: 12px; bottom: 12px; padding: 9px 12px; gap: 10px; }
@@ -1215,6 +1319,7 @@ footer {
   .brand-logo { height: 32px; }
   .faq-item summary { padding: 16px 18px; font-size: 14px; }
   .faq-answer { padding: 0 18px 18px; }
+  .quote .stars { font-size: 19px; letter-spacing: 3px; }
 }
 </style>
 </head>
@@ -1316,16 +1421,10 @@ footer {
         </div>
       </div>
 
-      <!-- ==========================================================
-           【可替换动画模块】
-           替换为真实 GIF / MP4：
-           ① 删除 <div class="stage-demo">...</div>
-           ② 取消下面 <img class="stage-media"> 或 <video class="stage-media"> 的注释
-           ========================================================== -->
+      <!-- 可替换动画模块 -->
       <div class="hero-visual">
         <div class="stage">
 
-          <!-- ▼ 默认 CSS 动画（可整块删除） -->
           <div class="stage-demo">
             <div class="scene">
               <div class="sky"></div>
@@ -1359,9 +1458,8 @@ footer {
             </div>
             <div class="atmos"></div>
           </div>
-          <!-- ▲ 默认 CSS 动画结束 -->
 
-          <!-- 替换为真实素材时，取消下面其中一行的注释 -->
+          <!-- 替换真实素材时启用： -->
           <!-- <img class="stage-media" src="your-animation.gif" alt="Raynomad Smart Film Demo"> -->
           <!-- <video class="stage-media" src="your-animation.mp4" autoplay muted loop playsinline></video> -->
 
@@ -1594,24 +1692,51 @@ footer {
       </div>
     </div>
 
+    <!-- ③ 下载模块（更显眼 + 可替换链接） -->
     <div class="dl-row reveal">
-      <a href="#contact" class="dl-btn">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
-        <span data-i18n="spec.dl1">产品规格书 PDF</span>
+      <a href="#contact" class="dl-card">
+        <span class="dl-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15h6M9 11h3"/></svg>
+        </span>
+        <span class="dl-text">
+          <strong data-i18n="spec.dl1">产品规格书</strong>
+          <span>PDF · SPEC SHEET</span>
+        </span>
+        <span class="dl-arrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
       </a>
-      <a href="#contact" class="dl-btn">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
-        <span data-i18n="spec.dl2">安装手册 PDF</span>
+
+      <a href="#contact" class="dl-card">
+        <span class="dl-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3"/></svg>
+        </span>
+        <span class="dl-text">
+          <strong data-i18n="spec.dl2">安装手册</strong>
+          <span>PDF · INSTALL GUIDE</span>
+        </span>
+        <span class="dl-arrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
       </a>
-      <a href="#contact" class="dl-btn">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
-        <span data-i18n="spec.dl3">认证证书 PDF</span>
+
+      <a href="#contact" class="dl-card">
+        <span class="dl-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="15" r="3"/><path d="M9.5 13.5 12 15l2.5-1.5"/></svg>
+        </span>
+        <span class="dl-text">
+          <strong data-i18n="spec.dl3">认证证书</strong>
+          <span>PDF · CERTIFICATES</span>
+        </span>
+        <span class="dl-arrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ==================== 应用 ==================== -->
+<!-- ==================== 应用（图片模块） ==================== -->
 <section id="applications" class="surface">
   <div class="wrap">
     <div class="section-head reveal">
@@ -1621,43 +1746,82 @@ footer {
     </div>
 
     <div class="grid-4 reveal">
+      <!-- 1 商业办公 -->
       <div class="app-card">
-        <div class="ai"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg></div>
+        <div class="app-img">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'><rect width='160' height='100' fill='%23EEF2F6'/><rect x='18' y='26' width='124' height='56' rx='4' fill='%23DDE4EB'/><rect x='18' y='26' width='124' height='16' fill='%23CDD6DF'/><circle cx='30' cy='34' r='2.5' fill='%23F4F6F8'/><circle cx='38' cy='34' r='2.5' fill='%23F4F6F8'/><circle cx='46' cy='34' r='2.5' fill='%23F4F6F8'/><path d='M26 78l22-26 18 20 14-16 20 22H26z' fill='%23B8C4D0'/><text x='80' y='92' text-anchor='middle' font-family='Helvetica,Arial' font-size='6' fill='%239BA8B5' letter-spacing='1'>SCENE IMAGE</text></svg>"
+               alt="商业办公">
+        </div>
         <h4 data-i18n="app.1.t">商业办公</h4>
         <p data-i18n="app.1.d">会议室、隔断、前台 —— 一键切换透明与雾化。</p>
       </div>
+
+      <!-- 2 住宅家居 -->
       <div class="app-card">
-        <div class="ai"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V10z"/></svg></div>
+        <div class="app-img">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'><rect width='160' height='100' fill='%23EEF2F6'/><path d='M34 66l46-34 46 34v18H34z' fill='%23DDE4EB'/><rect x='62' y='58' width='36' height='26' fill='%23CDD6DF'/><rect x='72' y='64' width='16' height='20' fill='%23F4F6F8'/><text x='80' y='92' text-anchor='middle' font-family='Helvetica,Arial' font-size='6' fill='%239BA8B5' letter-spacing='1'>SCENE IMAGE</text></svg>"
+               alt="住宅家居">
+        </div>
         <h4 data-i18n="app.2.t">住宅家居</h4>
         <p data-i18n="app.2.d">卧室、浴室、阳台、阳光房 —— 白天采光，夜晚隐私。</p>
       </div>
+
+      <!-- 3 酒店餐饮 -->
       <div class="app-card">
-        <div class="ai"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div>
+        <div class="app-img">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'><rect width='160' height='100' fill='%23EEF2F6'/><rect x='20' y='30' width='120' height='52' rx='4' fill='%23DDE4EB'/><path d='M20 30l60-16 60 16z' fill='%23CDD6DF'/><rect x='72' y='58' width='16' height='24' fill='%23F4F6F8'/><circle cx='40' cy='48' r='6' fill='%23F4F6F8'/><circle cx='120' cy='48' r='6' fill='%23F4F6F8'/><text x='80' y='92' text-anchor='middle' font-family='Helvetica,Arial' font-size='6' fill='%239BA8B5' letter-spacing='1'>SCENE IMAGE</text></svg>"
+               alt="酒店餐饮">
+        </div>
         <h4 data-i18n="app.3.t">酒店餐饮</h4>
         <p data-i18n="app.3.d">客房、包间、宴会厅 —— 瞬间雾化，保障隐私。</p>
       </div>
+
+      <!-- 4 医疗教育 -->
       <div class="app-card">
-        <div class="ai"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <div class="app-img">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'><rect width='160' height='100' fill='%23EEF2F6'/><rect x='24' y='26' width='112' height='60' rx='4' fill='%23DDE4EB'/><path d='M62 44h36v6h-36z' fill='%23C3CBD3'/><path d='M77 29h6v36h-6z' fill='%23C3CBD3'/><rect x='30' y='60' width='100' height='4' fill='%23CDD6DF'/><text x='80' y='92' text-anchor='middle' font-family='Helvetica,Arial' font-size='6' fill='%239BA8B5' letter-spacing='1'>SCENE IMAGE</text></svg>"
+               alt="医疗教育">
+        </div>
         <h4 data-i18n="app.4.t">医疗教育</h4>
         <p data-i18n="app.4.d">诊室、手术室、教室、实验室 —— 隐私与采光兼得。</p>
       </div>
+
+      <!-- 5 博物馆展陈 -->
       <div class="app-card">
-        <div class="ai"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16M6 20V8l6-4 6 4v12"/><path d="M10 20v-5h4v5"/></svg></div>
+        <div class="app-img">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'><rect width='160' height='100' fill='%23EEF2F6'/><path d='M30 40l50-20 50 20v4H30z' fill='%23CDD6DF'/><rect x='34' y='44' width='92' height='40' fill='%23DDE4EB'/><rect x='44' y='54' width='12' height='30' fill='%23F4F6F8'/><rect x='64' y='54' width='12' height='30' fill='%23F4F6F8'/><rect x='84' y='54' width='12' height='30' fill='%23F4F6F8'/><rect x='104' y='54' width='12' height='30' fill='%23F4F6F8'/><text x='80' y='92' text-anchor='middle' font-family='Helvetica,Arial' font-size='6' fill='%239BA8B5' letter-spacing='1'>SCENE IMAGE</text></svg>"
+               alt="博物馆展陈">
+        </div>
         <h4 data-i18n="app.5.t">博物馆展陈</h4>
         <p data-i18n="app.5.d">艺术品保护、展柜调光 —— 阻隔紫外线。</p>
       </div>
+
+      <!-- 6 影视制作 -->
       <div class="app-card">
-        <div class="ai"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 9v11"/></svg></div>
+        <div class="app-img">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'><rect width='160' height='100' fill='%23EEF2F6'/><rect x='22' y='30' width='60' height='44' rx='3' fill='%23DDE4EB'/><rect x='86' y='30' width='52' height='44' rx='3' fill='%23CDD6DF'/><circle cx='104' cy='52' r='10' fill='%23F4F6F8'/><path d='M28 74l16-18 12 12 8-8 16 14H28z' fill='%23B8C4D0'/><text x='80' y='92' text-anchor='middle' font-family='Helvetica,Arial' font-size='6' fill='%239BA8B5' letter-spacing='1'>SCENE IMAGE</text></svg>"
+               alt="影视制作">
+        </div>
         <h4 data-i18n="app.6.t">影视制作</h4>
         <p data-i18n="app.6.d">拍摄布景、隐私空间 —— 快速切换场景。</p>
       </div>
+
+      <!-- 7 交通运输 -->
       <div class="app-card">
-        <div class="ai"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13l2-7h14l2 7v6H3v-6z"/><circle cx="7" cy="16" r="1.3"/><circle cx="17" cy="16" r="1.3"/></svg></div>
+        <div class="app-img">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'><rect width='160' height='100' fill='%23EEF2F6'/><path d='M26 66l10-26h88l10 26v10H26z' fill='%23DDE4EB'/><path d='M42 42h76l8 22H34z' fill='%23CDD6DF'/><circle cx='48' cy='78' r='7' fill='%23B8C4D0'/><circle cx='112' cy='78' r='7' fill='%23B8C4D0'/><text x='80' y='92' text-anchor='middle' font-family='Helvetica,Arial' font-size='6' fill='%239BA8B5' letter-spacing='1'>SCENE IMAGE</text></svg>"
+               alt="交通运输">
+        </div>
         <h4 data-i18n="app.7.t">交通运输</h4>
         <p data-i18n="app.7.d">汽车天窗、高铁、游艇 —— 智能调光，舒适随行。</p>
       </div>
+
+      <!-- 8 特殊场景 -->
       <div class="app-card">
-        <div class="ai"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <div class="app-img">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'><rect width='160' height='100' fill='%23EEF2F6'/><rect x='50' y='46' width='60' height='34' rx='3' fill='%23DDE4EB'/><path d='M62 46V34a18 18 0 0 1 36 0v12' fill='none' stroke='%23CDD6DF' stroke-width='6'/><circle cx='80' cy='64' r='5' fill='%23B8C4D0'/><text x='80' y='92' text-anchor='middle' font-family='Helvetica,Arial' font-size='6' fill='%239BA8B5' letter-spacing='1'>SCENE IMAGE</text></svg>"
+               alt="特殊场景">
+        </div>
         <h4 data-i18n="app.8.t">特殊场景</h4>
         <p data-i18n="app.8.d">NDA 项目、保密空间 —— 按需定制，安全可靠。</p>
       </div>
@@ -1665,7 +1829,7 @@ footer {
   </div>
 </section>
 
-<!-- ==================== 产品生态 ==================== -->
+<!-- ==================== 产品生态（图片模块） ==================== -->
 <section id="ecosystem">
   <div class="wrap">
     <div class="section-head reveal">
@@ -1675,47 +1839,100 @@ footer {
     </div>
 
     <div class="eco-grid reveal">
+      <!-- 1 -->
       <div class="eco-item">
+        <div class="eco-img">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 90'><rect width='160' height='90' fill='%23EEF2F6'/><rect x='30' y='22' width='100' height='46' rx='4' fill='%23DDE4EB'/><path d='M30 68l30-30 22 20 18-18 30 28H30z' fill='%23B8C4D0'/><text x='80' y='82' text-anchor='middle' font-family='Helvetica,Arial' font-size='6' fill='%239BA8B5' letter-spacing='1'>PRODUCT IMAGE</text></svg>"
+               alt="智能调光膜">
+        </div>
         <span class="no">01</span>
         <h4 data-i18n="eco.1.t">智能调光膜</h4>
         <p data-i18n="eco.1.d">核心产品，通电透明、断电雾化，支持无级调光。</p>
       </div>
+
+      <!-- 2 -->
       <div class="eco-item">
+        <div class="eco-img">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 90'><rect width='160' height='90' fill='%23EEF2F6'/><rect x='30' y='22' width='100' height='46' rx='4' fill='%23DDE4EB'/><rect x='54' y='34' width='52' height='22' rx='2' fill='%23C3CBD3'/><text x='80' y='82' text-anchor='middle' font-family='Helvetica,Arial' font-size='6' fill='%239BA8B5' letter-spacing='1'>PRODUCT IMAGE</text></svg>"
+               alt="反向调光膜">
+        </div>
         <span class="no">02</span>
         <h4 data-i18n="eco.2.t">反向调光膜</h4>
         <p data-i18n="eco.2.d">断电透明、通电雾化，满足反向操作需求。</p>
       </div>
+
+      <!-- 3 -->
       <div class="eco-item">
+        <div class="eco-img">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 90'><rect width='160' height='90' fill='%23EEF2F6'/><rect x='34' y='20' width='92' height='50' rx='4' fill='%23DDE4EB'/><path d='M46 60l24-26 18 16 12-12 22 22H46z' fill='%23B8C4D0'/><text x='80' y='82' text-anchor='middle' font-family='Helvetica,Arial' font-size='6' fill='%239BA8B5' letter-spacing='1'>PRODUCT IMAGE</text></svg>"
+               alt="智能亚克力板">
+        </div>
         <span class="no">03</span>
         <h4 data-i18n="eco.3.t">智能亚克力板</h4>
         <p data-i18n="eco.3.d">集成调光膜的亚克力板，免现场贴膜，无气泡烦恼。</p>
       </div>
+
+      <!-- 4 -->
       <div class="eco-item">
+        <div class="eco-img">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 90'><rect width='160' height='90' fill='%23EEF2F6'/><rect x='28' y='18' width='104' height='54' rx='4' fill='%23DDE4EB'/><rect x='40' y='30' width='36' height='30' rx='2' fill='%23B8C4D0'/><rect x='84' y='30' width='36' height='30' rx='2' fill='%23C3CBD3'/><text x='80' y='82' text-anchor='middle' font-family='Helvetica,Arial' font-size='6' fill='%239BA8B5' letter-spacing='1'>PRODUCT IMAGE</text></svg>"
+               alt="调光玻璃">
+        </div>
         <span class="no">04</span>
         <h4 data-i18n="eco.4.t">调光玻璃</h4>
         <p data-i18n="eco.4.d">夹胶调光玻璃，出厂即成品，适合新建与改造项目。</p>
       </div>
+
+      <!-- 5 -->
       <div class="eco-item">
+        <div class="eco-img">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 90'><rect width='160' height='90' fill='%23EEF2F6'/><rect x='54' y='14' width='52' height='62' rx='8' fill='%23DDE4EB'/><rect x='60' y='22' width='40' height='42' rx='2' fill='%23C3CBD3'/><rect x='70' y='68' width='20' height='3' rx='1.5' fill='%23B8C4D0'/><text x='80' y='82' text-anchor='middle' font-family='Helvetica,Arial' font-size='6' fill='%239BA8B5' letter-spacing='1'>PRODUCT IMAGE</text></svg>"
+               alt="手机 App">
+        </div>
         <span class="no">05</span>
         <h4 data-i18n="eco.5.t">手机 App</h4>
         <p data-i18n="eco.5.d">手机控制、定时、共享、远程管理，随时随地掌控隐私。</p>
       </div>
+
+      <!-- 6 -->
       <div class="eco-item">
+        <div class="eco-img">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 90'><rect width='160' height='90' fill='%23EEF2F6'/><rect x='44' y='24' width='72' height='42' rx='6' fill='%23DDE4EB'/><circle cx='66' cy='45' r='9' fill='%23C3CBD3'/><rect x='84' y='38' width='24' height='4' rx='2' fill='%23C3CBD3'/><rect x='84' y='48' width='18' height='4' rx='2' fill='%23C3CBD3'/><text x='80' y='82' text-anchor='middle' font-family='Helvetica,Arial' font-size='6' fill='%239BA8B5' letter-spacing='1'>PRODUCT IMAGE</text></svg>"
+               alt="控制器">
+        </div>
         <span class="no">06</span>
         <h4 data-i18n="eco.6.t">控制器</h4>
         <p data-i18n="eco.6.d">遥控、墙壁开关、智能网关，兼容主流第三方系统。</p>
       </div>
+
+      <!-- 7 -->
       <div class="eco-item">
+        <div class="eco-img">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 90'><rect width='160' height='90' fill='%23EEF2F6'/><rect x='34' y='26' width='44' height='38' rx='3' fill='%23DDE4EB'/><rect x='86' y='26' width='44' height='38' rx='3' fill='%23C3CBD3'/><path d='M44 54l12-14 10 10 8-8 12 12H44z' fill='%23B8C4D0'/><text x='80' y='82' text-anchor='middle' font-family='Helvetica,Arial' font-size='6' fill='%239BA8B5' letter-spacing='1'>PRODUCT IMAGE</text></svg>"
+               alt="样品套装">
+        </div>
         <span class="no">07</span>
         <h4 data-i18n="eco.7.t">样品套装</h4>
         <p data-i18n="eco.7.d">1 平方英尺功能样品，亲自体验效果，费用可抵扣订单。</p>
       </div>
+
+      <!-- 8 -->
       <div class="eco-item">
+        <div class="eco-img">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 90'><rect width='160' height='90' fill='%23EEF2F6'/><rect x='30' y='22' width='100' height='46' rx='4' fill='%23DDE4EB'/><path d='M46 56l16-16 12 12 10-10 22 22H46z' fill='%23B8C4D0'/><circle cx='110' cy='36' r='6' fill='%23C3CBD3'/><text x='80' y='82' text-anchor='middle' font-family='Helvetica,Arial' font-size='6' fill='%239BA8B5' letter-spacing='1'>PRODUCT IMAGE</text></svg>"
+               alt="定制服务">
+        </div>
         <span class="no">08</span>
         <h4 data-i18n="eco.8.t">定制服务</h4>
         <p data-i18n="eco.8.d">按项目需求定制尺寸、颜色、电压与控制方案。</p>
       </div>
+
+      <!-- 9 -->
       <div class="eco-item">
+        <div class="eco-img">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 90'><rect width='160' height='90' fill='%23EEF2F6'/><rect x='30' y='28' width='100' height='34' rx='4' fill='%23DDE4EB'/><rect x='44' y='38' width='20' height='14' rx='2' fill='%23C3CBD3'/><rect x='72' y='38' width='20' height='14' rx='2' fill='%23C3CBD3'/><rect x='100' y='38' width='20' height='14' rx='2' fill='%23B8C4D0'/><text x='80' y='82' text-anchor='middle' font-family='Helvetica,Arial' font-size='6' fill='%239BA8B5' letter-spacing='1'>PRODUCT IMAGE</text></svg>"
+               alt="工程配套">
+        </div>
         <span class="no">09</span>
         <h4 data-i18n="eco.9.t">工程配套</h4>
         <p data-i18n="eco.9.d">电源、线材、安装辅料一站式配套，降低采购成本。</p>
@@ -1734,9 +1951,7 @@ footer {
     </div>
 
     <div class="grid-3 reveal">
-      <!-- 评价 1 -->
       <div class="quote">
-        <!-- 【可替换图片】把 src 换成项目实拍图 / 案例图 -->
         <div class="quote-media">
           <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'><rect width='320' height='200' fill='%23EEF2F6'/><rect x='28' y='36' width='264' height='128' rx='4' fill='%23DDE4EB'/><rect x='28' y='36' width='264' height='30' fill='%23CDD6DF'/><circle cx='52' cy='51' r='5' fill='%23F4F6F8'/><circle cx='70' cy='51' r='5' fill='%23F4F6F8'/><circle cx='88' cy='51' r='5' fill='%23F4F6F8'/><path d='M40 146l42-52 38 42 26-30 44 58H40z' fill='%23B8C4D0'/><circle cx='224' cy='80' r='16' fill='%23B8C4D0'/><text x='160' y='182' text-anchor='middle' font-family='Helvetica,Arial' font-size='9' fill='%239BA8B5' letter-spacing='1.4'>CASE IMAGE · 320×200</text></svg>"
                alt="案例图片">
@@ -1749,7 +1964,6 @@ footer {
         </div>
       </div>
 
-      <!-- 评价 2 -->
       <div class="quote">
         <div class="quote-media">
           <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'><rect width='320' height='200' fill='%23EEF2F6'/><rect x='28' y='36' width='264' height='128' rx='4' fill='%23DDE4EB'/><rect x='28' y='36' width='264' height='30' fill='%23CDD6DF'/><circle cx='52' cy='51' r='5' fill='%23F4F6F8'/><circle cx='70' cy='51' r='5' fill='%23F4F6F8'/><circle cx='88' cy='51' r='5' fill='%23F4F6F8'/><path d='M40 146l42-52 38 42 26-30 44 58H40z' fill='%23B8C4D0'/><circle cx='224' cy='80' r='16' fill='%23B8C4D0'/><text x='160' y='182' text-anchor='middle' font-family='Helvetica,Arial' font-size='9' fill='%239BA8B5' letter-spacing='1.4'>CASE IMAGE · 320×200</text></svg>"
@@ -1763,7 +1977,6 @@ footer {
         </div>
       </div>
 
-      <!-- 评价 3 -->
       <div class="quote">
         <div class="quote-media">
           <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'><rect width='320' height='200' fill='%23EEF2F6'/><rect x='28' y='36' width='264' height='128' rx='4' fill='%23DDE4EB'/><rect x='28' y='36' width='264' height='30' fill='%23CDD6DF'/><circle cx='52' cy='51' r='5' fill='%23F4F6F8'/><circle cx='70' cy='51' r='5' fill='%23F4F6F8'/><circle cx='88' cy='51' r='5' fill='%23F4F6F8'/><path d='M40 146l42-52 38 42 26-30 44 58H40z' fill='%23B8C4D0'/><circle cx='224' cy='80' r='16' fill='%23B8C4D0'/><text x='160' y='182' text-anchor='middle' font-family='Helvetica,Arial' font-size='9' fill='%239BA8B5' letter-spacing='1.4'>CASE IMAGE · 320×200</text></svg>"
@@ -1790,136 +2003,100 @@ footer {
     </div>
 
     <div class="faq-list reveal">
-      <!-- 1 -->
       <details class="faq-item">
         <summary>
           <span data-i18n="faq.q1">什么是智能调光膜？它是如何工作的？</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
         </summary>
-        <div class="faq-answer">
-          <p data-i18n="faq.a1">智能调光膜是一种贴合在玻璃表面的功能薄膜。通电时液晶分子有序排列，光线透过，玻璃呈透明状态；断电时液晶分子随机排列，光线散射，玻璃呈雾化磨砂状态。整个过程可在毫秒级完成切换。</p>
-        </div>
+        <div class="faq-answer"><p data-i18n="faq.a1">智能调光膜是一种贴合在玻璃表面的功能薄膜。通电时液晶分子有序排列，光线透过，玻璃呈透明状态；断电时液晶分子随机排列，光线散射，玻璃呈雾化磨砂状态。整个过程可在毫秒级完成切换。</p></div>
       </details>
 
-      <!-- 2 -->
       <details class="faq-item">
         <summary>
           <span data-i18n="faq.q2">可以贴在已有的玻璃上吗？需要更换玻璃吗？</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
         </summary>
-        <div class="faq-answer">
-          <p data-i18n="faq.a2">可以。我们的调光膜采用自粘背胶设计，可直接贴合于任何光滑的现有玻璃表面，无需更换整块玻璃，适合改造项目。对于新建项目，也可以选择出厂即集成的夹胶调光玻璃。</p>
-        </div>
+        <div class="faq-answer"><p data-i18n="faq.a2">可以。我们的调光膜采用自粘背胶设计，可直接贴合于任何光滑的现有玻璃表面，无需更换整块玻璃，适合改造项目。对于新建项目，也可以选择出厂即集成的夹胶调光玻璃。</p></div>
       </details>
 
-      <!-- 3 -->
       <details class="faq-item">
         <summary>
           <span data-i18n="faq.q3">断电后是透明还是雾化？可以反向操作吗？</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
         </summary>
-        <div class="faq-answer">
-          <p data-i18n="faq.a3">标准产品断电后呈雾化（磨砂）状态，通电后透明。我们也提供反向操作产品，断电透明、通电雾化，可根据场景需求选择。</p>
-        </div>
+        <div class="faq-answer"><p data-i18n="faq.a3">标准产品断电后呈雾化（磨砂）状态，通电后透明。我们也提供反向操作产品，断电透明、通电雾化，可根据场景需求选择。</p></div>
       </details>
 
-      <!-- 4 -->
       <details class="faq-item">
         <summary>
           <span data-i18n="faq.q4">有哪些控制方式？能接入智能家居吗？</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
         </summary>
-        <div class="faq-answer">
-          <p data-i18n="faq.a4">支持遥控器、手机 App、墙壁开关、语音控制，以及 Crestron、Lutron、DMX、Arduino、米家、HomeKit、Alexa、Google Home 等第三方系统。可根据项目需求灵活配置。</p>
-        </div>
+        <div class="faq-answer"><p data-i18n="faq.a4">支持遥控器、手机 App、墙壁开关、语音控制，以及 Crestron、Lutron、DMX、Arduino、米家、HomeKit、Alexa、Google Home 等第三方系统。可根据项目需求灵活配置。</p></div>
       </details>
 
-      <!-- 5 -->
       <details class="faq-item">
         <summary>
           <span data-i18n="faq.q5">功耗大吗？会不会很费电？</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
         </summary>
-        <div class="faq-answer">
-          <p data-i18n="faq.a5">功耗极低，约 0.3-0.4 W/平方英尺（约 3-4.3 W/㎡）。一块 10 ㎡ 的调光膜功耗约 30-43 W，相当于一盏普通灯泡，长期使用不会明显增加电费。</p>
-        </div>
+        <div class="faq-answer"><p data-i18n="faq.a5">功耗极低，约 0.3-0.4 W/平方英尺（约 3-4.3 W/㎡）。一块 10 ㎡ 的调光膜功耗约 30-43 W，相当于一盏普通灯泡，长期使用不会明显增加电费。</p></div>
       </details>
 
-      <!-- 6 -->
       <details class="faq-item">
         <summary>
           <span data-i18n="faq.q6">安装需要多长时间？需要专业人员吗？</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
         </summary>
-        <div class="faq-answer">
-          <p data-i18n="faq.a6">单块玻璃贴膜通常 1-2 小时即可完成，具体取决于玻璃尺寸与走线难度。大型项目可根据现场情况制定施工计划。我们提供专业安装团队或详细的安装指导。</p>
-        </div>
+        <div class="faq-answer"><p data-i18n="faq.a6">单块玻璃贴膜通常 1-2 小时即可完成，具体取决于玻璃尺寸与走线难度。大型项目可根据现场情况制定施工计划。我们提供专业安装团队或详细的安装指导。</p></div>
       </details>
 
-      <!-- 7 -->
       <details class="faq-item">
         <summary>
           <span data-i18n="faq.q7">最大可以做到多大尺寸？超大玻璃怎么办？</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
         </summary>
-        <div class="faq-answer">
-          <p data-i18n="faq.a7">单块膜最大宽度 1800mm，长度可定制（最长可达 50 米）。超大玻璃可采用多块拼接方案，支持统一控制或独立控制，拼接处几乎不可见。</p>
-        </div>
+        <div class="faq-answer"><p data-i18n="faq.a7">单块膜最大宽度 1800mm，长度可定制（最长可达 50 米）。超大玻璃可采用多块拼接方案，支持统一控制或独立控制，拼接处几乎不可见。</p></div>
       </details>
 
-      <!-- 8 -->
       <details class="faq-item">
         <summary>
           <span data-i18n="faq.q8">能阻隔紫外线吗？对家具和艺术品有保护作用吗？</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
         </summary>
-        <div class="faq-answer">
-          <p data-i18n="faq.a8">可以。调光膜可阻隔 99% 以上的紫外线，同时减少太阳热辐射，保护室内家具、地板、艺术品免受紫外线伤害，并降低空调能耗。博物馆、美术馆等场所广泛采用。</p>
-        </div>
+        <div class="faq-answer"><p data-i18n="faq.a8">可以。调光膜可阻隔 99% 以上的紫外线，同时减少太阳热辐射，保护室内家具、地板、艺术品免受紫外线伤害，并降低空调能耗。博物馆、美术馆等场所广泛采用。</p></div>
       </details>
 
-      <!-- 9 -->
       <details class="faq-item">
         <summary>
           <span data-i18n="faq.q9">质保期是多久？出现质量问题怎么办？</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
         </summary>
-        <div class="faq-answer">
-          <p data-i18n="faq.a9">标准质保期为 10 年，具体以产品线为准。质保期内出现非人为质量问题，我们提供维修或更换服务，并可通过远程技术指导快速响应。</p>
-        </div>
+        <div class="faq-answer"><p data-i18n="faq.a9">标准质保期为 10 年，具体以产品线为准。质保期内出现非人为质量问题，我们提供维修或更换服务，并可通过远程技术指导快速响应。</p></div>
       </details>
 
-      <!-- 10 -->
       <details class="faq-item">
         <summary>
           <span data-i18n="faq.q10">可以定制尺寸、颜色和电压吗？</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
         </summary>
-        <div class="faq-answer">
-          <p data-i18n="faq.a10">可以。我们支持按项目需求定制尺寸、颜色（白、灰、黑及定制色）、工作电压（12-24VDC / 28-60VAC / 120-240VAC）、控制方案与安装方式，提供完整技术图纸与工程支持。</p>
-        </div>
+        <div class="faq-answer"><p data-i18n="faq.a10">可以。我们支持按项目需求定制尺寸、颜色（白、灰、黑及定制色）、工作电压（12-24VDC / 28-60VAC / 120-240VAC）、控制方案与安装方式，提供完整技术图纸与工程支持。</p></div>
       </details>
 
-      <!-- 11 -->
       <details class="faq-item">
         <summary>
           <span data-i18n="faq.q11">如何申请样品？样品费用可以抵扣吗？</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
         </summary>
-        <div class="faq-answer">
-          <p data-i18n="faq.a11">我们提供 1 平方英尺功能样品，可亲自体验透明与雾化的切换效果。样品费用可在后续 10 平方英尺以上订单中全额抵扣。请联系我们的销售团队申请。</p>
-        </div>
+        <div class="faq-answer"><p data-i18n="faq.a11">我们提供 1 平方英尺功能样品，可亲自体验透明与雾化的切换效果。样品费用可在后续 10 平方英尺以上订单中全额抵扣。请联系我们的销售团队申请。</p></div>
       </details>
 
-      <!-- 12 -->
       <details class="faq-item">
         <summary>
           <span data-i18n="faq.q12">海外客户如何购买？支持全球发货吗？</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
         </summary>
-        <div class="faq-answer">
-          <p data-i18n="faq.a12">支持全球发货，已服务 60 多个国家和地区。海外客户可通过邮件或在线表单联系，我们提供英文技术资料与远程工程支持，并协助对接当地安装合作伙伴。</p>
-        </div>
+        <div class="faq-answer"><p data-i18n="faq.a12">支持全球发货，已服务 60 多个国家和地区。海外客户可通过邮件或在线表单联系，我们提供英文技术资料与远程工程支持，并协助对接当地安装合作伙伴。</p></div>
       </details>
     </div>
   </div>
@@ -1975,13 +2152,13 @@ footer {
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <!-- 【可替换Logo模块】与导航使用同一素材即可 -->
+        <!-- 【可替换Logo模块】整块替换为 PNG / SVG -->
         <a href="#top" class="logo" aria-label="Raynomad">
           <img class="brand-logo"
                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 248 44'><circle cx='22' cy='22' r='21' fill='%23C8102E'/><path d='M15.5 33.5V11.2c0-.5.4-.9.9-.9h8.3c4.3 0 7.2 2.6 7.2 6.7 0 2.8-1.5 4.9-3.9 5.9l4.2 10c.2.4-.1.6-.4.6h-3.2c-.3 0-.4-.1-.5-.4l-3.8-9.2h-4.8v9c0 .3-.2.6-.6.6h-2.8c-.3 0-.6-.3-.6-.6z' fill='white'/><text x='52' y='30' font-family='Helvetica,Arial,sans-serif' font-size='23' font-weight='800' fill='%23C8102E' letter-spacing='-0.6'>Raynomad</text></svg>"
                alt="Raynomad">
         </a>
-        <p data-i18n="foot.desc">智能调光膜 · 电控雾化 · 瞬间隐私。让每一块玻璃，都拥有智能隐私能力。</p>
+        <p data-i18n-html="foot.desc">智能调光膜 · 电控雾化 · 瞬间隐私<br>让每一块玻璃，都拥有智能隐私能力</p>
       </div>
 
       <div class="foot-col">
@@ -2078,7 +2255,7 @@ const I18N = {
     'spec.k6': 'INSTALLATION', 'spec.v6': '自粘安装 / 机械安装',
     'spec.k7': 'CONTROL', 'spec.v7': '遥控、App、墙壁开关、第三方系统',
     'spec.k8': 'UV BLOCKING', 'spec.k9': 'WARRANTY', 'spec.v9': '10 年（按产品线略有差异）',
-    'spec.dl1': '产品规格书 PDF', 'spec.dl2': '安装手册 PDF', 'spec.dl3': '认证证书 PDF',
+    'spec.dl1': '产品规格书', 'spec.dl2': '安装手册', 'spec.dl3': '认证证书',
 
     'app.eyebrow': 'APPLICATIONS',
     'app.title': '适用于每一个需要 <em>隐私与光控</em> 的空间',
@@ -2153,7 +2330,7 @@ const I18N = {
     'cta.l5.t': '加入安装网络', 'cta.l5.d': '成为 Raynomad 合作伙伴',
     'cta.l6.t': '海外合作', 'cta.l6.d': '区域代理与分销合作洽谈',
 
-    'foot.desc': '智能调光膜 · 电控雾化 · 瞬间隐私。让每一块玻璃，都拥有智能隐私能力。',
+    'foot.desc': '智能调光膜 · 电控雾化 · 瞬间隐私<br>让每一块玻璃，都拥有智能隐私能力',
     'foot.h1': '产品', 'foot.p1': '智能调光膜', 'foot.p2': '反向调光膜',
     'foot.p3': '智能亚克力板', 'foot.p4': '调光玻璃',
     'foot.h2': '解决方案', 'foot.s1': '商业办公', 'foot.s2': '住宅家居',
@@ -2219,7 +2396,7 @@ const I18N = {
     'spec.k6': 'INSTALLATION', 'spec.v6': 'Self-adhesive / Mechanical',
     'spec.k7': 'CONTROL', 'spec.v7': 'Remote, App, Wall Switch, Third-Party Systems',
     'spec.k8': 'UV BLOCKING', 'spec.k9': 'WARRANTY', 'spec.v9': '10 years (varies slightly by product line)',
-    'spec.dl1': 'Product Spec Sheet PDF', 'spec.dl2': 'Installation Manual PDF', 'spec.dl3': 'Certificates PDF',
+    'spec.dl1': 'Product Spec Sheet', 'spec.dl2': 'Installation Manual', 'spec.dl3': 'Certificates',
 
     'app.eyebrow': 'APPLICATIONS',
     'app.title': 'For Every Space That Needs <em>Privacy &amp; Light Control</em>',
@@ -2294,7 +2471,7 @@ const I18N = {
     'cta.l5.t': 'Join Installer Network', 'cta.l5.d': 'Become a Raynomad partner',
     'cta.l6.t': 'Overseas Partnership', 'cta.l6.d': 'Regional distribution and agency inquiries',
 
-    'foot.desc': 'Smart Film · Switchable Privacy · Instant Privacy. Giving every glass surface intelligent privacy.',
+    'foot.desc': 'Smart Film · Switchable Privacy · Instant Privacy<br>Giving every glass surface intelligent privacy',
     'foot.h1': 'Products', 'foot.p1': 'Smart Film', 'foot.p2': 'Reverse Film',
     'foot.p3': 'Smart Plexi', 'foot.p4': 'Smart Glass',
     'foot.h2': 'Solutions', 'foot.s1': 'Commercial Offices', 'foot.s2': 'Residential',
@@ -2378,7 +2555,7 @@ const io = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-/* ============ FAQ 单开模式（可选） ============ */
+/* ============ FAQ 单开模式 ============ */
 document.querySelectorAll('.faq-item').forEach(item => {
   item.addEventListener('toggle', () => {
     if (item.open) {
